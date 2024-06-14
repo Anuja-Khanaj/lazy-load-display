@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --primary-color: #152942;
+    --secondary-color:  #40b884;
+    --text-color:#12417B;
+    --bg-color:#181720;
+}
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.btn1{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn2{
+    background-color: #40b884;
+    color: white;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radius{
+    border:solid black 2px;
+    border-radius: 1rem;
+}

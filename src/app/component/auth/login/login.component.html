@@ -1,0 +1,34 @@
+<div class="container" *ngIf="!isSignupDisplay">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <div class="username form-item">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" formControlName="username">
+      </div>
+      <div class="password form-item">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="pass">
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <small>Don't have an account? <p (click)="signup()">Signup</p></small>
+    </form>
+  </div>
+  
+  <div class="container" *ngIf="isSignupDisplay">
+    <form [formGroup]="form" (ngSubmit)="onSignup(form)">
+      <div class="username form-item">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" formControlName="username">
+      </div>
+      <div class="password form-item">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="pass">
+      </div>
+      <div class="password form-item">
+        <label for="password">Confirm Password</label>
+        <input type="password" class="form-control" formControlName="cpass">
+      </div>
+      <button type="submit" class="btn btn-primary">Signup</button>
+      <small>Already have an account? <p (click)="login()">Login</p></small>
+    </form>
+  </div>
+  

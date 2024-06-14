@@ -1,0 +1,46 @@
+<div class="center mt-5">
+    <div class="main">
+      <h1 class="text-center">
+        Vogal Multipurpose Shopify Theme
+      </h1>
+      <p class="text-center">
+        Bring your store to the Next Level with a clean, Professional design and Advanced theme options
+      </p>
+  
+      <div class="btns center">
+        <button mat-button class="btn btn-lg btn1 m-1">Purchase Vogal</button>
+        <button mat-button class="btn btn-lg btn2 m-1">Open store for free</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let product of products">
+        <div class="card mb-4" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ product.color }}</h6>
+            <img class="card-img-top" [src]="product.imageUrl" alt="Product image">
+            <p class="card-text">{{ product.description }}</p>
+           
+              <div class="d-flex align-items-center">
+                <button class="btn btn1  btn-sm py-2 me-2">View Product</button>
+                <button class="btn btn2  p-1 m-1 rounded">
+                  <i class="material-icons">shopping_cart</i>
+                </button>
+                <button class="btn btn2  p-1 m-1 rounded">
+                    <i class="material-icons">favorite</i>
+                  </button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+  

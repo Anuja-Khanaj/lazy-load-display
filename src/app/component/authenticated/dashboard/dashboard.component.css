@@ -1,0 +1,11 @@
+.main{
+    width: 40%; 
+}
+
+h1{
+    font-size: 60px;
+    color: var(--text-color);
+}
+p{
+   font-size: 1.2rem;
+}
