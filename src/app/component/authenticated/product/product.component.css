@@ -1,0 +1,7 @@
+p{
+    color: var(--text-color);
+}
+
+mat-form-field{
+    cursor: pointer;
+}

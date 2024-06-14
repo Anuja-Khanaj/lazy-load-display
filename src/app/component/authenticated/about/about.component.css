@@ -1,3 +1,11 @@
 h2{
     color: var(--text-color);
 }
+
+.small-column {
+    width: 2%; /* Adjust the width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  

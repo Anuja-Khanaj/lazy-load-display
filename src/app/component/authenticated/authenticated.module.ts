@@ -10,12 +10,21 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatSortModule} from '@angular/material/sort';
 import {MatTabsModule, matTabsAnimations} from '@angular/material/tabs';
 import { AboutComponent } from './about/about.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule, matFormFieldAnimations} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SearchPipe } from 'src/app/search.pipe';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     ProductComponent,
-    AboutComponent
+    AboutComponent,
+    SearchPipe,
+   ViewProductComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +35,12 @@ import { AboutComponent } from './about/about.component';
     MatMenuModule,
     MatTabsModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ]
 
 })

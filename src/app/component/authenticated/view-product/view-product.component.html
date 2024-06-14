@@ -1,0 +1,19 @@
+<div *ngIf="product">
+    <div class="card mb-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ product.color }}</h6>
+          <img class="card-img-top" [src]="product.imageUrl" alt="Product image">
+          <p class="card-text">{{ product.description }}</p>
+          <div class="d-flex align-items-center">
+            <button class="btn btn1 btn-sm py-2 me-2">View Product</button>
+            <button class="btn btn2 p-1 m-1 rounded">
+              <i class="material-icons">shopping_cart</i>
+            </button>
+            <button class="btn btn2 p-1 m-1 rounded">
+              <i class="material-icons">favorite</i>
+            </button>
+          </div>
+        </div>
+      </div>
+</div>
