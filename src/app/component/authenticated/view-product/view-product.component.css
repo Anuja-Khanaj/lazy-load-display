@@ -1,0 +1,19 @@
+
+.product-colors {
+    text-align: center;
+  }
+  
+  .colors {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .color-box {
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    border-radius: 50%;
+
+  }
+  

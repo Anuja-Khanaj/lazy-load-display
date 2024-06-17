@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './product/product.component';
 import { AuthGuard } from 'src/app/guard/auth.guard';
 import { AboutComponent } from './about/about.component';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 
 
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path:'about',
     component:AboutComponent,
+    // canLoad:[AuthGuard]
+  },
+  {
+    path:'view',
+    component:ViewProductComponent,
     // canLoad:[AuthGuard]
   }
 ];

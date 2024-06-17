@@ -1,19 +1,64 @@
-<div *ngIf="product">
-    <div class="card mb-4" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{ product.color }}</h6>
-          <img class="card-img-top" [src]="product.imageUrl" alt="Product image">
-          <p class="card-text">{{ product.description }}</p>
-          <div class="d-flex align-items-center">
-            <button class="btn btn1 btn-sm py-2 me-2">View Product</button>
-            <button class="btn btn2 p-1 m-1 rounded">
-              <i class="material-icons">shopping_cart</i>
-            </button>
-            <button class="btn btn2 p-1 m-1 rounded">
-              <i class="material-icons">favorite</i>
-            </button>
-          </div>
+<div class="container d-flex mt-4">
+  <div class="left" style="width: 50%;">
+    <div class="title">
+      <h2>Mens Short</h2>
+      <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, alias.</h5>
+    </div>
+    <div class="img" style="width: 90%;">
+      <img style="width: 90%;" src="../../../../assets/sackcloth-sackcloth-textured-laptop-ipad.jpg" alt="">
+    </div>
+    <div class="d-flex align-items-center">
+      <button class="btn btn1 btn-sm py-2 me-2">Buy now</button>
+      <button class="btn btn2 p-2 m-1 rounded d-flex align-items-center">
+        <i class="material-icons">shopping_cart</i>
+        <span> Add to Cart</span>
+      </button>
+      <button class="btn btn1 p-1 m-1 rounded">
+        <i class="material-icons">share</i>
+      </button>
+    </div>
+  </div>
+  <div class="right" style="width: 50%;">
+    <div class="des">
+      <h2>Brief</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta harum in consequatur quam! Sint optio facilis
+        voluptates labore iste eos accusamus eligendi vitae. Non nihil, magnam reprehenderit sapiente nisi rem quas a
+        quaerat. Doloremque earum cum recusandae repudiandae natus, assumenda tenetur odit? Velit minima enim sint
+        similique, iure neque incidunt distinctio facilis voluptates ducimus repellat adipisci eius amet iste.
+        Temporibus tempore ab iste atque aspernatur unde nulla, aut, impedit provident facilis enim eligendi quasi hic
+        itaque illo deserunt recusandae! Aut est excepturi alias possimus dolores reiciendis numquam, pariatur sint
+        aperiam, odio odit facilis quo quisquam. Debitis fuga corrupti libero saepe.</p>
+    </div>
+    <br>
+    <div class="colors">
+      <div class="d-flex align-items-center">
+        <h3>Colors Available: </h3>
+        
+          <div *ngFor="let color of product.colors" [ngStyle]="{'background-color': color}" class="color-box">
         </div>
       </div>
+    </div>
+    <br>
+    <h2>Product Img</h2>
+    <div class="d-flex imgs" style="gap: 20px;">
+      <img style="width: 20%;" src="../../../../assets/sackcloth-sackcloth-textured-laptop-ipad.jpg" >
+      <img style="width: 20%;" src="../../../../assets/sackcloth-sackcloth-textured-laptop-ipad.jpg" >
+      <img style="width: 20%;" src="../../../../assets/sackcloth-sackcloth-textured-laptop-ipad.jpg" >
+      <img style="width: 20%;" src="../../../../assets/sackcloth-sackcloth-textured-laptop-ipad.jpg" >
+      <img style="width: 20%;" src="../../../../assets/sackcloth-sackcloth-textured-laptop-ipad.jpg" >
+    </div>
+    <div class="d-flex imgs mt-3" style="gap: 20px;">
+      <div class="d-flex align-items-center">
+        <button class="btn btn2 p-1 m-1 rounded">
+          <i class="material-icons">taxi</i>
+        </button>
+        <button class="btn btn2 p-1 m-1 rounded">
+          <i class="material-icons">renew</i>
+        </button>
+        <button class="btn btn2 p-1 m-1 rounded">
+          <i class="material-icons">cup</i>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
