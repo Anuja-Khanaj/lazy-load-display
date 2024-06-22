@@ -17,6 +17,7 @@ import {MatFormFieldModule, matFormFieldAnimations} from '@angular/material/form
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from 'src/app/search.pipe';
 import { ViewProductComponent } from './view-product/view-product.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ViewProductComponent } from './view-product/view-product.component';
     MatAutocompleteModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClipboardModule
   ]
 
 })

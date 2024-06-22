@@ -7,7 +7,7 @@
         <form class="example-form">
           <i class="material-icons">search</i>
           <mat-form-field class="example-full-width">
-            <mat-label>Category</mat-label>
+            <mat-label>category</mat-label>
             <input type="text"  placeholder="Pick one" aria-label="Number" matInput [(ngModel)]="searchTextm"
               [formControl]="myControl" [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete">
@@ -22,15 +22,15 @@
       </div>
       <p *ngIf="searchTextm" class="mb-3">results are displayed for search " {{searchTextm}} "</p>
       <div class="row">
-        <div class="col-md-3 small-column" *ngFor="let product of menClothes|search:searchTextm">
-          <div class="card mb-4" style="width: 18rem;">
+        <div class="col-md-3 small-column" *ngFor="let product of  childrenClothes |search:searchTextm">
+          <div class="card mb-4" style="width: 18rem;" *ngIf="product.category == 'Men'">
             <div class="card-body">
               <h5 class="card-title">{{ product.name }}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{ product.color }}</h6>
               <img class="card-img-top" [src]="product.imageUrl" alt="Product image">
               <p class="card-text">{{ product.description }}</p>
               <div class="d-flex align-items-center">
-                <button class="btn btn1 btn-sm py-2 me-2">View Product</button>
+                <button class="btn btn1 btn-sm py-2 me-2" routerLink='../view/{{product.id}}'(click)="viewProduct(product.id)" >View Product</button>
                 <button class="btn btn2 p-1 m-1 rounded">
                   <i class="material-icons">shopping_cart</i>
                 </button>
@@ -52,7 +52,7 @@
         <form class="example-form">
           <i class="material-icons">search</i>
           <mat-form-field class="example-full-width">
-            <mat-label>Category</mat-label>
+            <mat-label>category</mat-label>
             <input type="text" placeholder="Pick one" aria-label="Number" matInput [(ngModel)]="searchText"
               [formControl]="myControl" [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete">
@@ -68,15 +68,15 @@
       <p *ngIf="searchText" class="mb-3">results are displayed for search " {{searchText}} "</p>
       
       <div class="row">
-        <div class="col-md-3 small-column" *ngFor="let product of ladiesClothes | search:searchText">
-          <div class="card mb-4" style="width: 18rem;">
+        <div class="col-md-3 small-column" *ngFor="let product of  childrenClothes | search:searchText">
+          <div class="card mb-4" style="width: 18rem;" *ngIf="product.category == 'Women'">
             <div class="card-body">
               <h5 class="card-title">{{ product.name }}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{ product.color }}</h6>
               <img class="card-img-top" [src]="product.imageUrl" alt="Product image">
               <p class="card-text">{{ product.description }}</p>
               <div class="d-flex align-items-center">
-                <button class="btn btn1 btn-sm py-2 me-2" >View Product</button>
+                <button class="btn btn1 btn-sm py-2 me-2"  (click)="viewProduct(product.id)" >View Product</button>
                 <button class="btn btn2 p-1 m-1 rounded">
                   <i class="material-icons">shopping_cart</i>
                 </button>
@@ -98,7 +98,7 @@
         <form class="example-form">
           <i class="material-icons">search</i>
           <mat-form-field class="example-full-width">
-            <mat-label>Category</mat-label>
+            <mat-label>category</mat-label>
             <input type="text" placeholder="Pick one" aria-label="Number" matInput [(ngModel)]="searchTextk"
               [formControl]="myControl" [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete">
@@ -114,15 +114,15 @@
       <p *ngIf="searchTextk" class="mb-3">results are displayed for search " {{searchTextk}} "</p>
     
       <div class="row">
-        <div class="col-md-3 small-column" *ngFor="let product of  childrenClothes | search:searchTextk">
-          <div class="card mb-4" style="width: 18rem;">
+        <div class="col-md-3 small-column" *ngFor="let product of   childrenClothes| search:searchTextk">
+          <div class="card mb-4" style="width: 18rem;" *ngIf="product.category == 'Kids'">
             <div class="card-body">
               <h5 class="card-title">{{ product.name }}</h5>
               <h6 class="card-subtitle mb-2 text-muted">{{ product.color }}</h6>
               <img class="card-img-top" [src]="product.imageUrl" alt="Product image">
               <p class="card-text">{{ product.description }}</p>
               <div class="d-flex align-items-center">
-                <button class="btn btn1 btn-sm py-2 me-2">View Product</button>
+                <button class="btn btn1 btn-sm py-2 me-2" (click)="viewProduct(product.id)" >View Product</button>
                 <button class="btn btn2 p-1 m-1 rounded">
                   <i class="material-icons">shopping_cart</i>
                 </button>
@@ -137,3 +137,5 @@
     </div>
   </mat-tab>
 </mat-tab-group>
+
+<router-outlet></router-outlet>

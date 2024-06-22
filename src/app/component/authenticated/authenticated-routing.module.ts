@@ -30,7 +30,7 @@ const routes: Routes = [
     // canLoad:[AuthGuard]
   },
   {
-    path:'view',
+    path:'view/:id',
     component:ViewProductComponent,
     // canLoad:[AuthGuard]
   }

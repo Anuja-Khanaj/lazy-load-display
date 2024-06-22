@@ -1,4 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ClipboardService } from 'ngx-clipboard';
+import { Product } from 'src/app/model/Product';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-view-product',
@@ -6,11 +10,25 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent {
-  // @Input() product: any;
-  product = {
-    id: 1,
-    name: 'Sample Product',
-    colors: ['#FD9B63', '#55AD9B', '#95D2B3', '#D8EFD3'] // Example colors in hex format
-  };
+  product: Product | undefined;
+  currenturl:string
+  constructor(private route: ActivatedRoute, private productService: ProductService,private clipboard
+    :ClipboardService
+  ) {
+this.currenturl = window.location.href
+   }
 
+  ngOnInit(): void {
+    const productId = this.route.snapshot.paramMap.get('id');
+    if (productId) {
+      this.productService.getProductById(+productId).subscribe((data) => {
+        this.product = data;
+      });
+    }
+  }
+  copyUrlToClipboard() {
+    this.clipboard.copyFromContent(this.currenturl);
+    // Optionally, you can provide user feedback
+    alert('URL copied to clipboard');
+  }
 }

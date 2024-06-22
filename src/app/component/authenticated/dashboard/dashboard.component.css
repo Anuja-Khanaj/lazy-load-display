@@ -3,6 +3,7 @@
 }
 
 h1{
+    line-height: 4rem;
     font-size: 60px;
     color: var(--text-color);
 }
