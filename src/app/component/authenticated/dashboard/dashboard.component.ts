@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AllProducts } from 'src/app/model/AllProducts';
@@ -13,6 +13,7 @@ import { ProductService } from 'src/app/service/product.service';
 export class DashboardComponent {
   product: Product[] | undefined;
   products
+
   constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
 
   ngOnInit(): void {
