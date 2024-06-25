@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AddTocartService } from 'src/app/service/add-tocart.service';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -6,10 +8,24 @@ import { AuthService } from 'src/app/service/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent  implements OnInit{
   @Input() bagade:string
- constructor(private authservice: AuthService){}
+  isdisplay:boolean = false
+  cartData=[];
+  count:number;
+  like:number = 0 ;
+ constructor(private authservice: AuthService,private cart:AddTocartService,private router:Router){}
   logout(){
     this.authservice.logout();
   }
+  display(){
+    this.isdisplay = !this.isdisplay
+  }
+
+  ngOnInit(): void {
+    this.cartData = this.cart.getCart();
+    this.count = this.cartData.length
+  }
+  
+ 
 }
