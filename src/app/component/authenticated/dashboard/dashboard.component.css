@@ -1,12 +1,16 @@
-.main{
-    width: 40%; 
-}
-
-h1{
-    line-height: 4rem;
-    font-size: 60px;
-    color: var(--text-color);
-}
-p{
-   font-size: 1.2rem;
-}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .main {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .card {
+    width: 100%; /* Ensures the card takes the full width of the column */
+  }
+  
