@@ -55,8 +55,8 @@
       <h2>Price: ${{product.price}}</h2>
   
       <div class="d-flex align-items-center">
-        <button class="btn btn1 btn-sm py-2 me-2">Buy now</button>
-        <button class="btn btn2 p-2 m-1 rounded d-flex align-items-center">
+        <button class="btn btn1 btn-sm py-2 me-2" (click)="gotoPayment()">Buy now</button>
+        <button (click)="addtocart(product)" class="btn btn2 p-2 m-1 rounded d-flex align-items-center">
           <i class="material-icons">shopping_cart</i>
           <span> Add to Cart</span>
         </button>

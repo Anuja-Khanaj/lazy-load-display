@@ -1,0 +1,130 @@
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="card mt-3 p-3 col-md-8">
+            <h1 class="text-center">Add Your Address</h1>
+            <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+               <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="mobileNumber" formControlName="name" class="form-control">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="mobileNumber" class="form-label">Mobile number</label>
+                    <input type="text" id="mobileNumber" formControlName="mobileNumber" class="form-control">
+                </div>
+               </div>
+               <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label for="countryRegion" class="form-label">Country/Region</label>
+                    <input type="text" id="countryRegion" formControlName="countryRegion" class="form-control">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" id="state" formControlName="state" class="form-control">
+                </div>
+               </div>
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label for="flat" class="form-label">Flat/House no./Building</label>
+                    <input type="text" id="flat" formControlName="flat" class="form-control">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="landmark" class="form-label">Landmark/Street/Sector</label>
+                    <input type="text" id="landmark" formControlName="landmark" class="form-control">
+                </div>
+              </div>                
+               <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label for="townCity" class="form-label">Town/City/Village</label>
+                    <input type="text" id="townCity" formControlName="townCity" class="form-control">
+                </div>
+                
+             
+                <div class="mb-3 col-md-6">
+                    <label for="pincode" class="form-label">Pincode</label>
+                    <input type="text" id="pincode" formControlName="pincode" class="form-control">
+                </div>
+               </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" formControlName="defaultAddress" class="form-check-input">
+                    <label class="form-check-label">Make this my default address</label>
+                </div>
+            </form>
+            <button type="submit" class="btn btn1">Continune</button>
+        </div>
+        
+        <div class="rounded mt-3  col-md-4">
+            <div class="card p-4">
+                <h1><b>Product Details</b></h1>
+            <hr>
+            <h2>Product name: {{ productName }}</h2>
+            <h2>Product price: {{ productPrice }}</h2>
+            <h4>No.of.Item: {{ numberOfItems }}</h4>
+            <button class="btn btn2" routerLink="../../dashboard/done">Place order</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="container mb-4">
+<mat-accordion class="mb-4" >
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Payment </mat-panel-title>
+        <mat-panel-description> Check  details  </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="container mt-5 ">
+        <div class="row d-flex justify-content-center">
+            <div class="card mt-3 p-3 col-md-8">
+                <h1 class="text-center">Choose mode of payment</h1>
+             
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title> UPI(GPay,PhonePe,Paytm) </mat-panel-title>
+                          <mat-panel-description> Offers Available </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <img src="../../../../assets/1-Figure1-1.png" alt="">
+                        <br>         
+                    <button type="submit" class="btn btn1">Continune</button>   
+                      </mat-expansion-panel>
+                      <br>
+                      <mat-expansion-panel >
+                        <mat-expansion-panel-header>
+                          <mat-panel-title> UPIid </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <input type="text" class="form-control" placeholder="Enter UPIid">
+                             <br>    
+                    <button type="submit" class="btn btn1">Continune</button>
+                      </mat-expansion-panel>
+                    <br>
+                    <mat-expansion-panel >
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>Cash On delivery </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input">
+                            <label class="form-check-label">Cash on delivery</label>
+                        </div>
+                   
+                    <button type="submit" class="btn btn1">Continune</button>
+                      </mat-expansion-panel>
+            </div>
+            
+            <div class="rounded mt-3  col-md-4">
+                <div class="card p-4">
+                    <h1><b>Payment Details</b></h1>
+                <hr>
+               
+                <h4>No.of.Item: {{ numberOfItems }}</h4>
+                <h2>Product price: {{ productPrice }}</h2>
+                <button class="btn btn2" routerLink="../../dashboard/done">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<router-outlet></router-outlet>
