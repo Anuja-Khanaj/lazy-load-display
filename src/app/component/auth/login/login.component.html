@@ -1,34 +1,54 @@
-<div class="container" *ngIf="!isSignupDisplay">
-    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-      <div class="username form-item">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" formControlName="username">
-      </div>
-      <div class="password form-item">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" formControlName="pass">
-      </div>
-      <button type="submit" class="btn btn-primary">Login</button>
-      <small>Don't have an account? <p (click)="signup()">Signup</p></small>
-    </form>
+<div class="container center gap-2 " *ngIf="!isSignupDisplay">
+  <div >
+    <img style="width: 100%;
+    height: auto;" src="../../../../assets/undraw_fingerprint_login_re_t71l.svg" alt="">
   </div>
-  
-  <div class="container" *ngIf="isSignupDisplay">
-    <form [formGroup]="form" (ngSubmit)="onSignup(form)">
-      <div class="username form-item">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" formControlName="username">
-      </div>
-      <div class="password form-item">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" formControlName="pass">
-      </div>
-      <div class="password form-item">
-        <label for="password">Confirm Password</label>
-        <input type="password" class="form-control" formControlName="cpass">
-      </div>
-      <button type="submit" class="btn btn-primary">Signup</button>
-      <small>Already have an account? <p (click)="login()">Login</p></small>
-    </form>
+  <form [formGroup]="form" style="width: 90%;" (ngSubmit)="onSubmit(form.value)">
+    <h1 class="text-center">Login Form</h1>
+    <div class="username form-item">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div class="password form-item">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" formControlName="pass">
+    </div>
+    <button type="submit" class="btn btn2">Login</button>
+    <div class="d-flex gap-2">
+      <small>Don't have an account? </small>
+      <small>
+         <p (click)="signup()">Signup</p>
+      </small>
+    </div>
+  </form>
+</div>
+
+<div class="container center gap-2" *ngIf="isSignupDisplay">
+  <div >
+    <img style="width: 100%;
+    height: auto;" src="../../../../assets/undraw_sign_up_n6im (1).svg" alt="">
   </div>
-  
+  <form [formGroup]="form" style="width: 90%;" (ngSubmit)="onSignup(form)">
+    <h1 class="text-center">Signup Form</h1>
+    <div class="username form-item">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" formControlName="username">
+    </div>
+    <div class="password form-item">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" formControlName="pass">
+    </div>
+    <div class="password form-item">
+      <label for="password">Confirm Password</label>
+      <input type="password" class="form-control" formControlName="cpass">
+    </div>
+    <button type="submit" class="btn btn1">Signup</button>
+    <div class="d-flex gap-2">
+      <small>Already have an account? </small>
+      <small>
+        <p (click)="login()">Login</p>
+      </small>
+    </div>
+  </form>
+ 
+</div>
