@@ -3,7 +3,7 @@
 }
 
 form{
-    width: 50%;
+    /* width: 50%; */
     border: solid var(--text-color) 1px;
     border-radius: 19px;
     padding: 20px;
@@ -33,5 +33,9 @@ small p {
 
     img{
        display: none;
+    }
+
+    form{
+        max-width: 110%;
     }
 }
